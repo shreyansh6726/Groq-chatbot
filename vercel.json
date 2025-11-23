@@ -1,4 +1,8 @@
 {
+  
+  "engines": {
+    "node": "18.x"
+  },
   "version": 2,
   "functions": {
     "api/**/*.js": {
