@@ -1,16 +1,203 @@
-# React + Vite
+Groq Chatbot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional chatbot built using React (Vite) for the frontend and Vercel Serverless Functions for backend API handling.
+This project integrates the Groq API to generate fast, high-quality responses using state-of-the-art open-source language models like Gemma and Llama.
 
-Currently, two official plugins are available:
+This repository demonstrates how to structure a modern AI-powered project while keeping the API key secure, making it suitable for learning, student projects, portfolio showcases, and real deployments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Project Overview
 
-## React Compiler
+The Groq Chatbot is an interactive web application that allows users to send messages and receive intelligent responses in real time. It is powered by the Groq Cloud API, which provides extremely fast inference for open-source models.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Since API keys must remain confidential, the project uses Vercel's Serverless Functions to proxy API requests securely. The frontend communicates with a backend route hosted on Vercel, which then calls the Groq API and returns the response to the browser.
 
-## Expanding the ESLint configuration
+The project is optimized for deployment on Vercel and integrates cleanly with GitHub for automatic builds and updates.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Key Features
+1. Modern Frontend (React + Vite)
+
+The user interface is built with React and bundled with Vite, providing:
+
+Fast local development
+
+Lightweight and optimized build outputs
+
+Easy component-based structure
+
+2. Secure Backend (Vercel Serverless Functions)
+
+All API calls to Groq are handled using Vercel’s serverless backend.
+This provides:
+
+Zero server management
+
+Secure handling of private API keys
+
+Automatic scaling
+
+Simple API routing structure
+
+3. Integration with Groq API
+
+The chatbot uses the official Groq JavaScript SDK to generate responses using high-performance models such as:
+
+gemma2-9b-it
+
+llama3-8b
+
+mixtral 8x7b
+
+Groq’s cloud infrastructure allows extremely low-latency responses, which improves the overall chat experience.
+
+4. Fully Deployable on Vercel
+
+The entire project is designed for smooth deployment on Vercel with:
+
+Continuous Deployment from GitHub
+
+Built-in environment variable support
+
+Serverless API functions
+
+Automatic SSL and hosting
+
+```
+Groq-chatbot/
+│
+├── api/                # Backend serverless functions (Groq API calls)
+│   └── chat.js
+│
+├── src/                # React frontend source code
+│   └── App.jsx
+│
+├── public/             # Static assets
+│
+├── index.html          # Main HTML file for Vite
+├── package.json        # Project dependencies and scripts
+├── vite.config.js      # Vite configuration
+├── vercel.json         # Vercel function runtime config
+└── node_modules        # Installed packages
+
+```
+How It Works
+1. User sends a message
+
+The user types a message in the frontend interface.
+React tracks this input using component state.
+
+2. Frontend sends request to backend
+
+The frontend sends a POST request to:
+
+```
+/api/chat
+
+```
+This route exists inside the api folder and is deployed as a serverless function.
+3. Serverless function calls Groq API
+The backend function:
+
+
+Reads the user’s input
+
+
+Connects to Groq Cloud using the SDK
+
+
+Sends the message to a chosen model
+
+
+Receives the model’s generated output
+
+
+4. Response is returned to the browser
+The backend sends the model’s reply back to the frontend, where it is displayed in the chat interface.
+This ensures the Groq API key remains hidden and secure.
+
+Technologies Used
+Frontend
+
+
+React
+
+
+Vite
+
+
+JavaScript ES6
+
+
+HTML & CSS
+
+
+Backend
+
+
+Vercel Serverless Functions
+
+
+Groq JavaScript SDK
+
+
+Deployment
+
+
+Vercel
+
+
+GitHub Repository Integration
+
+
+
+Why This Project Is Useful
+This project teaches how modern AI applications are built using:
+
+
+A fast, reactive frontend framework
+
+
+A secure serverless backend
+
+
+Powerful AI inference engines
+
+
+Cloud deployment workflows
+
+
+It is an excellent learning resource for:
+
+
+Students
+
+
+Web developers
+
+
+Beginners exploring AI integration
+
+
+Anyone building portfolio projects
+
+
+
+Future Improvements
+Possible enhancements include:
+
+
+Conversational memory
+
+
+Better UI styling
+
+
+Typing animations
+
+
+Error handling and loading indicators
+
+
+Multiple model selection
+
+
+Dark mode support
