@@ -61,7 +61,7 @@ Serverless API functions
 
 Automatic SSL and hosting
 
-How It Works
+How It Works ?
 1. User sends a message
 
 The user types a message in the frontend interface.
