@@ -102,7 +102,7 @@ const ChatbotUI = () => {
             </button>
           </div>
           <div style={{ textAlign: 'center', fontSize: '10px', color: '#9ca3af', marginTop: '8px' }}>
-            Powered by Groq LPU™ Inference
+            
           </div>
         </form>
       </div>
